@@ -7,6 +7,11 @@ from subfolder.subfolder20.uuidStuff.acuuid import accountID
 
 item = input("Please enter the item first word in name: \n")
 
+if (item[0].isupper()):
+    pass
+else:
+    item = item.capitalize()
+
 link14 = "https://sky.shiiyu.moe/api/v2/profile/" + accountID
 
 k = urlopen(Request(link14, headers={'User-Agent': 'Mozilla'}))
@@ -28,8 +33,9 @@ for slotitem in slot_1_item:
                 slotitemreforge = slotitem["extra"]["reforge"]
                 first_word = display_name.split()[0]
                 slotitemreforge_new = display_name.replace(first_word + " ", "")
-                slotitemreforge_new = slotitemreforge_new.replace(" ", "%20")
+                slotitemreforge_new = slotitemreforge_new.replace(" ✪", "")
                 slotitemreforge_new = slotitemreforge_new.replace("✪", "")
+                slotitemreforge_new = slotitemreforge_new.replace(" ", "%20")
             break
 
 ##item_recombobulated = slotitem[""]
@@ -53,6 +59,9 @@ if 'gems' in ExtraO.keys():
                 perfect_gem = perfect_gem.replace("_0", "")
                 perfect_gem = perfect_gem + "_GEM"
                 perfect_gem1 = "stop"
+            else:
+                perfect_gem = 0
+                perfect_gem1 = "dont_stop"
 else:
     perfect_gem = 0
     perfect_gem1 = "dont_stop"
@@ -68,5 +77,6 @@ if 'enchantments' in ExtraA.keys():
             ultimate_enchant = ultimate_enchant.upper()
             ultimate_enchant = "ENCHANTMENT_" + ultimate_enchant + "_" + enchant_number
             ultimate_enchant1 = "stop"
-else: 
-    ultimate_enchant = 0
+        else: 
+            ultimate_enchant = 0
+            ultimate_enchant1 = "nope"
