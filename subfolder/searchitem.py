@@ -25,7 +25,14 @@ slotItemReforge = input("Does the item have a reforge? (y/n) \n")
 for slotitem in slot_1_item:
     if "tag" in slotitem:
         display_name = slotitem["display_name"]
+
         if item in display_name:
+            print("The item that you entered is " + display_name + "?")
+            input_item = input("y/n \n")
+            if input_item == "y":
+                pass
+            else:
+                exit()
             if slotItemReforge == "n":
                 slotitemreforge_new = display_name
                 slotitemreforge_new = slotitemreforge_new.replace(" ", "%20")
