@@ -55,6 +55,7 @@ if 'gems' in ExtraO.keys():
                 perfect_gem1 = "stop"
 else:
     perfect_gem = 0
+    perfect_gem1 = "dont_stop"
 
 if 'enchantments' in ExtraA.keys():
     enchants = slotitem["tag"]["ExtraAttributes"]["enchantments"]
