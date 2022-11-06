@@ -35,10 +35,26 @@ for slotitem in slot_1_item:
 ##item_recombobulated = slotitem[""]
 
 itemlist = ("untimate_bank", "ultimate_combo", "ultimate_chrimera", "ultimate_duplex", "ultimate_soul_eater", "ultimate_bobbin_time", "ultimate_fatal_tempo", "ultimate_habanero_tactics","ultimate_inferno", "ultimate_last_stand", "ultimate_legion", "ultimate_one_for_all", "ultimate_swarm", "ultimate_wise", "ultimate_wisdom")
+item_list_gems = ("SAPPHIRE_0", "JADE_0", "AMBER_0", "TOPAZ_0", "AMETHIST_0", "JASPER_0", "RUBY_0")
 
 recombobulated = slotitem["recombobulated"]
 
 ExtraA = slotitem["tag"]["ExtraAttributes"]
+ExtraO = slotitem["extra"]
+
+if 'gems' in ExtraO.keys():
+
+    gems_thing = slotitem["extra"]["gems"]
+    for y in item_list_gems:
+        if y in gems_thing:
+            gems_thing_perfect = slotitem["extra"]["gems"][y]
+            if gems_thing_perfect == "PERFECT":
+                perfect_gem = gems_thing_perfect + "_" + y
+                perfect_gem = perfect_gem.replace("_0", "")
+                perfect_gem = perfect_gem + "_GEM"
+                perfect_gem1 = "stop"
+else:
+    perfect_gem = 0
 
 if 'enchantments' in ExtraA.keys():
     enchants = slotitem["tag"]["ExtraAttributes"]["enchantments"]
@@ -52,5 +68,4 @@ if 'enchantments' in ExtraA.keys():
             ultimate_enchant = "ENCHANTMENT_" + ultimate_enchant + "_" + enchant_number
             ultimate_enchant1 = "stop"
 else: 
-    ultimate_enchant = "print"
-    ultimate_enchant1 = 0 
+    ultimate_enchant = 0

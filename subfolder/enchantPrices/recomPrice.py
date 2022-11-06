@@ -1,6 +1,6 @@
 from urllib.request import urlopen, Request
 import json
-from subfolder.searchitem import ultimate_enchant, ultimate_enchant1
+from subfolder.searchitem import ultimate_enchant, perfect_gem, perfect_gem1, ultimate_enchant1
 
 
 # apiKey = input("Please enter api key:\n")
@@ -15,6 +15,12 @@ profile4 = json.loads(myfile2)
 
 
 item_recom_price = profile4["products"]["RECOMBOBULATOR_3000"]["sell_summary"][0]["pricePerUnit"]
+
+if perfect_gem1 == "stop":
+    item_gem_price = profile4["products"][perfect_gem]["sell_summary"][0]["pricePerUnit"]
+    item_gem_price = int(item_gem_price)
+else:
+    item_gem_price = 0
 
 if ultimate_enchant1 == "stop": 
     item_enchant_price = profile4["products"][ultimate_enchant]["sell_summary"][0]["pricePerUnit"]

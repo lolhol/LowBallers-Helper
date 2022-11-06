@@ -4,7 +4,7 @@ import json
 from urllib.request import urlopen, Request
 from urllib.request import urlopen
 from subfolder.searchitem import slotitemreforge_new, recombobulated
-from subfolder.enchantPrices.recomPrice import item_recom_price, item_enchant_price
+from subfolder.enchantPrices.recomPrice import item_recom_price, item_enchant_price, item_gem_price
 
 ah_link = "https://sky.coflnet.com/api/auctions/tag/" + slotitemreforge_new + "/active/bin"
 
@@ -19,10 +19,10 @@ for x in range(100):
 # Finds the EXACT price of a given item
 ah_item_price_final = ah_item_price[1]["startingBid"]
 
-finall_price = ah_item_price_final + item_enchant_price
+finall_price = ah_item_price_final + item_enchant_price + item_gem_price 
 
 if recombobulated == True:
-    finall_price = finall_price + item_recom_price
+    finall_price = finall_price + item_recom_price + item_gem_price
     print(" ")
     time.sleep(0.1)
     print("YOUR TOTAL ITEM PRICE IS... ")
