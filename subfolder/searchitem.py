@@ -32,17 +32,23 @@ for slotitem in slot_1_item:
             break
 
 
-itemlist = ("ultimate_chrimera", "ultimate_duplex", "ultimate_soul_eater", "ultimate_bobbin_time", "ultimate_fatal_tempo", "ultimate_habanero_tactics","ultimate_inferno", "ultimate_last_stand", "ultimate_legion", "ultimate_one_for_all", "ultimate_swarm", "ultimate_wise", "ultimate_wisdom")
+itemlist = ("untimate_bank", "ultimate_combo", "ultimate_chrimera", "ultimate_duplex", "ultimate_soul_eater", "ultimate_bobbin_time", "ultimate_fatal_tempo", "ultimate_habanero_tactics","ultimate_inferno", "ultimate_last_stand", "ultimate_legion", "ultimate_one_for_all", "ultimate_swarm", "ultimate_wise", "ultimate_wisdom")
 
 recombobulated = slotitem["recombobulated"]
 
-enchants = slotitem["tag"]["ExtraAttributes"]["enchantments"]
+ExtraA = slotitem["tag"]["ExtraAttributes"]
 
-for x in itemlist:
-    if x in enchants:
-        ultimate_enchant = x 
-        enchant_number = slotitem["tag"]["ExtraAttributes"]["enchantments"][ultimate_enchant]
-        enchant_number = str(enchant_number)
-        ultimate_enchant = ultimate_enchant.upper()
-        ultimate_enchant = "ENCHANTMENT_" + ultimate_enchant + "_" + enchant_number
+if 'enchantments' in ExtraA.keys():
+    enchants = slotitem["tag"]["ExtraAttributes"]["enchantments"]
 
+    for x in itemlist:
+        if x in enchants:
+            ultimate_enchant = x 
+            enchant_number = slotitem["tag"]["ExtraAttributes"]["enchantments"][ultimate_enchant]
+            enchant_number = str(enchant_number)
+            ultimate_enchant = ultimate_enchant.upper()
+            ultimate_enchant = "ENCHANTMENT_" + ultimate_enchant + "_" + enchant_number
+            ultimate_enchant1 = "stop"
+else: 
+    ultimate_enchant = "print"
+    ultimate_enchant1 = 0 

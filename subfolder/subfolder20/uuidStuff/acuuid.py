@@ -7,7 +7,8 @@ ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
 # Input the account name
-accountName = input("Please enter the account ign:\n")
+print(" ")
+accountName = input("Please enter the account ign: \n")
 
 # Looks up mc uuid on mc official website
 mc_uuid_link = "https://api.mojang.com/users/profiles/minecraft/" + accountName
