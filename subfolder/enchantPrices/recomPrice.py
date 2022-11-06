@@ -13,6 +13,7 @@ m = urlopen(Request(link11, headers={'User-Agent': 'Mozilla'}))
 myfile2 = m.read()
 profile4 = json.loads(myfile2)
 
+
 item_recom_price = profile4["products"]["RECOMBOBULATOR_3000"]["sell_summary"][0]["pricePerUnit"]
 
 if ultimate_enchant1 == "stop": 

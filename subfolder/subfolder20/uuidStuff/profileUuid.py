@@ -1,18 +1,17 @@
-import profile
 from urllib.request import urlopen, Request
 import json
-import ssl
 from subfolder.subfolder20.uuidStuff.acuuid import accountID
 import os
 import time
-import random
 import time
+import os.path
+from pathlib import Path
 import os.path
 
 current_time = time.time()
 current_time1 = str(current_time)
 
-if os.path.isfile("text.txt") == False:
+if os.path.exists("/text.txt") == "False":
     key = input("Please paste an api key here -- ")
 
     with open("test.txt",'w') as b:

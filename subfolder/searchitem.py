@@ -29,8 +29,10 @@ for slotitem in slot_1_item:
                 first_word = display_name.split()[0]
                 slotitemreforge_new = display_name.replace(first_word + " ", "")
                 slotitemreforge_new = slotitemreforge_new.replace(" ", "%20")
+                slotitemreforge_new = slotitemreforge_new.replace("✪", "")
             break
 
+##item_recombobulated = slotitem[""]
 
 itemlist = ("untimate_bank", "ultimate_combo", "ultimate_chrimera", "ultimate_duplex", "ultimate_soul_eater", "ultimate_bobbin_time", "ultimate_fatal_tempo", "ultimate_habanero_tactics","ultimate_inferno", "ultimate_last_stand", "ultimate_legion", "ultimate_one_for_all", "ultimate_swarm", "ultimate_wise", "ultimate_wisdom")
 
